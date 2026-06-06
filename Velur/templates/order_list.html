@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Заказы - Velur</title>
+    <link rel="stylesheet" href="/assets/admin.css">
+    <link rel="stylesheet" href="/assets/order.css">
+</head>
+<body>
+    <header class="admin-header">
+        <div class="admin-container">
+            <div class="header-content">
+                <h2>Velur - Женская одежда</h2>
+                <nav>
+                    <a href="/admin">Товары</a>
+                    <a href="/">На сайт</a>
+                    <a href="/logout">Выход</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="admin-container">
+        <div class="admin-card">
+            <div class="card-header">
+                <span style="font-size:1.3rem; font-weight:bold;">Список заказов</span>
+                <span style="font-size:0.85rem; color:#9D4469;">Всего заказов: {{ len . }}</span>
+            </div>
+            <div class="card-body">
+                <div style="overflow-x: auto;">
+                    {{ if . }}
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>№</th>
+                                <th>Покупатель</th>
+                                <th>Телефон</th>
+                                <th>Товар</th>
+                                <th>Кол-во</th>
+                                <th>Адрес</th>
+                                <th>Дата</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{ range . }}
+                            <tr>
+                                <td><strong>{{ .ID }}</strong></td>
+                                <td>
+                                    <strong>{{ .LastName }} {{ .FirstName }}</strong><br>
+                                    <small class="text-muted">{{ .MiddleName }}</small>
+                                </td>
+                                <td>{{ .Phone }}</td>
+                                <td>
+                                    <strong>{{ .ProductName }}</strong><br>
+                                    <small class="text-muted">{{ .ProductCategory }}</small>
+                                </td>
+                                <td>{{ .Quantity }}</td>
+                                <td>
+                                    {{ .City }}, {{ .Street }}<br>
+                                    д.{{ .House }}{{ if .Apartment }}, кв.{{ .Apartment }}{{ end }}
+                                </td>
+                                <td><small>{{ .OrderDate }}</small></td>
+                                <td>
+                                    <form action="/admin/order/{{ .ID }}/delete" method="post" onsubmit="return confirm('Удалить заказ?')">
+                                        <button type="submit" class="btn-delete">Удалить</button>
+                                    </form>
+                                </td>
+                            </tr>
+                            {{ end }}
+                        </tbody>
+                    </table>
+                    {{ else }}
+                    <div class="text-center" style="text-align:center; padding:40px; color:#999;">
+                        <p>Нет заказов</p>
+                    </div>
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+        <a href="/admin" class="btn-back" style="display:inline-block; margin-top:20px;">← Назад</a>
+    </div>
+
+    <footer class="admin-footer">
+        <p>© 2025 Velur - Магазин женской одежды. Все права защищены.</p>
+    </footer>
+</body>
+</html>

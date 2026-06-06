@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Редактировать товар - Velur</title>
+    <link rel="stylesheet" href="/assets/admin.css">
+</head>
+<body>
+    <div class="header">
+        <h2>Velur - Редактирование</h2>
+        <div>
+            <a href="/admin">Админ-панель</a>
+            <a href="/admin/orders">Заказы</a>
+            <a href="/logout">Выход</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>Редактировать товар</h1>
+        <form method="POST">
+            <div class="form-row">
+                <label>Название</label>
+                <input type="text" name="name" value="{{ .Name }}">
+            </div>
+            <div class="form-row">
+                <label>Описание</label>
+                <textarea name="description" rows="4">{{ .Description }}</textarea>
+            </div>
+            <div class="form-row">
+                <label>Цена (₽)</label>
+                <input type="text" name="price" value="{{ .Price }}">
+            </div>
+            <div class="form-row">
+                <label>Размер</label>
+                <input type="text" name="size" value="{{ .Size }}">
+            </div>
+            <div class="form-row">
+                <label>Цвет</label>
+                <input type="text" name="color" value="{{ .Color }}">
+            </div>
+            <div class="form-row">
+                <label>Материал</label>
+                <input type="text" name="material" value="{{ .Material }}">
+            </div>
+            <div class="form-row">
+                <label>Тип</label>
+                <input type="text" name="type" value="{{ .Type }}">
+            </div>
+            <div class="form-row">
+                <label>Сезон</label>
+                <select name="season">
+                    <option value="Весна" {{ if eq .Season "Весна" }}selected{{ end }}>Весна</option>
+                    <option value="Лето" {{ if eq .Season "Лето" }}selected{{ end }}>Лето</option>
+                    <option value="Осень" {{ if eq .Season "Осень" }}selected{{ end }}>Осень</option>
+                    <option value="Зима" {{ if eq .Season "Зима" }}selected{{ end }}>Зима</option>
+                </select>
+            </div>
+            <button type="submit">Сохранить изменения</button>
+            <a href="/admin" class="cancel" style="display:inline-block; padding:10px 20px; background:#999; color:white; text-decoration:none; border-radius:5px;">Отмена</a>
+        </form>
+    </div>
+</body>
+</html>

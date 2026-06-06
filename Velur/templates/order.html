@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Оформление заказа - Velur</title>
+    <link rel="stylesheet" href="/assets/order.css">
+    <style>
+        .order-container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        .order-container h1 {
+            color: #6A2C45;
+            margin-bottom: 20px;
+        }
+        .product-info {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .btn-submit {
+            background: #6A2C45;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+        .btn-submit:hover {
+            background: #9D4469;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 15px;
+            color: #6A2C45;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="order-container">
+        <h1>Оформление заказа</h1>
+        
+        <div class="product-info">
+            <p><strong>Товар:</strong> {{ .ProductName }}</p>
+            <p><strong>Категория:</strong> {{ .ProductCategory }}</p>
+        </div>
+        
+        <form method="POST" action="/order">
+            <input type="hidden" name="product_name" value="{{ .ProductName }}">
+            <input type="hidden" name="product_category" value="{{ .ProductCategory }}">
+            
+            <div class="form-group">
+                <label>Имя *</label>
+                <input type="text" name="first_name" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Фамилия *</label>
+                <input type="text" name="last_name" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Отчество</label>
+                <input type="text" name="middle_name">
+            </div>
+            
+            <div class="form-group">
+                <label>Телефон *</label>
+                <input type="tel" name="phone" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Количество</label>
+                <input type="number" name="quantity" value="1" min="1">
+            </div>
+            
+            <div class="form-group">
+                <label>Регион</label>
+                <input type="text" name="region">
+            </div>
+            
+            <div class="form-group">
+                <label>Город *</label>
+                <input type="text" name="city" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Улица *</label>
+                <input type="text" name="street" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Дом *</label>
+                <input type="text" name="house" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Квартира</label>
+                <input type="text" name="apartment">
+            </div>
+            
+            <button type="submit" class="btn-submit">Оформить заказ</button>
+        </form>
+        
+        <a href="/" class="back-link">← Вернуться в каталог</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Редактировать аксессуар - Velur</title>
+    <link rel="stylesheet" href="/assets/admin.css">
+</head>
+<body>
+    <header class="admin-header">
+        <div class="admin-container">
+            <div class="header-content">
+                <h2>Velur - Редактирование</h2>
+                <nav>
+                    <a href="/admin">Админ-панель</a>
+                    <a href="/admin/orders">Заказы</a>
+                    <a href="/logout">Выход</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="admin-container">
+        <div class="edit-container">
+            <div class="edit-header">
+                <h1>Редактировать аксессуар</h1>
+            </div>
+            
+            <form method="POST" action="/edit/accessory/{{ .ID }}" enctype="multipart/form-data">
+                <div class="form-row">
+                    <label>Название</label>
+                    <input type="text" name="name" value="{{ .Name }}" required>
+                </div>
+                <div class="form-row">
+                    <label>Описание</label>
+                    <textarea name="description" rows="4">{{ .Description }}</textarea>
+                </div>
+                <div class="form-row">
+                    <label>Цена (₽)</label>
+                    <input type="text" name="price" value="{{ .Price }}" required>
+                </div>
+                <div class="form-row">
+                    <label>Тип</label>
+                    <input type="text" name="type" value="{{ .Type }}">
+                </div>
+                <div class="form-row">
+                    <label>Цвет</label>
+                    <input type="text" name="color" value="{{ .Color }}">
+                </div>
+                <div class="form-row">
+                    <label>Материал</label>
+                    <input type="text" name="material" value="{{ .Material }}">
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn-save">Сохранить изменения</button>
+                    <a href="/admin" class="btn-cancel">Отмена</a>
+                </div>
+            </form>
+        </div>
+    </main>
+</body>
+</html>

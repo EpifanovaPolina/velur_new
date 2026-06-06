@@ -20,11 +20,11 @@ func NewStorage() *Storage {
 	godotenv.Load()
 
 	connStr := fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s sslmode=disable",
-		getEnv("DB_HOST", "localhost"),
-		getEnv("DB_PORT", "5432"),
-		getEnv("DB_USER", "postgres"),
-		getEnv("DB_PASSWORD", "postgress"),
-		getEnv("DB_NAME", "velur"))
+		getEnv("DB_HOST", ${DB_HOST}),
+		getEnv("DB_PORT", ${DB_PORT}),
+		getEnv("DB_USER", ${DB_USER}),
+		getEnv("DB_PASSWORD", ${DB_PASSWORD}),
+		getEnv("DB_NAME", ${DB_NAME}))
 
 	db, err := sql.Open("postgres", connStr)
 	if err != nil {
@@ -37,7 +37,7 @@ func NewStorage() *Storage {
 
 	log.Println("Подключение к БД успешно")
 
-	store := sessions.NewCookieStore([]byte(getEnv("SESSION_SECRET", "velur-secret-key-2024")))
+	store := sessions.NewCookieStore([]byte(getEnv("SESSION_SECRET", ${SESSION_SECRET})))
 
 	return &Storage{
 		DB:    db,

@@ -8,17 +8,15 @@
 
 body {
     font-family: 'Lato', sans-serif;
-    background: linear-gradient(135deg, #FAF7F0 0%, #F5F1E8 100%);
-    min-height: 100vh;
+    background-color: #FAF7F0;
 }
 
-/* ========== ШАПКА ========== */
 .admin-header {
     background: #FFFFFF;
     border-bottom: 1px solid #E8DFD0;
     padding: 15px 0;
     margin-bottom: 40px;
-    box-shadow: 0 4px 15px rgba(106, 44, 69, 0.05);
+    box-shadow: 0 2px 10px rgba(106, 44, 69, 0.05);
 }
 
 .admin-container {
@@ -43,88 +41,14 @@ body {
 .admin-header a {
     color: #6A2C45;
     text-decoration: none;
-    margin-left: 25px;
-    transition: color 0.3s ease;
-    font-weight: 500;
+    margin-left: 20px;
+    transition: color 0.3s;
 }
 
 .admin-header a:hover {
     color: #9D4469;
 }
 
-/* ========== ЗАГОЛОВКИ ========== */
-.admin-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem;
-    color: #6A2C45;
-    border-bottom: 2px solid #9D4469;
-    display: inline-block;
-    padding-bottom: 8px;
-    margin-bottom: 25px;
-}
-
-/* ========== КАРТОЧКИ ========== */
-.admin-card {
-    background: #FFFFFF;
-    border-radius: 20px;
-    margin-bottom: 35px;
-    overflow: hidden;
-    border: 1px solid #E8DFD0;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.admin-card:hover {
-    box-shadow: 0 12px 30px rgba(106, 44, 69, 0.1);
-}
-
-.card-header {
-    background: #FFFFFF;
-    color: #6A2C45;
-    padding: 18px 25px;
-    font-weight: 600;
-    font-size: 1.2rem;
-    font-family: 'Playfair Display', serif;
-    border-bottom: 1px solid #E8DFD0;
-    letter-spacing: 0.5px;
-}
-
-.card-body {
-    padding: 0;
-    overflow-x: auto;
-}
-
-/* ========== ТАБЛИЦЫ ========== */
-.admin-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.admin-table th {
-    background: #FAF7F0;
-    padding: 16px 20px;
-    text-align: left;
-    font-weight: 700;
-    color: #6A2C45;
-    border-bottom: 2px solid #E8DFD0;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 0.8px;
-}
-
-.admin-table td {
-    padding: 16px 20px;
-    border-bottom: 1px solid #E8DFD0;
-    vertical-align: middle;
-    color: #4A4A4A;
-    font-size: 0.95rem;
-}
-
-.admin-table tr:hover {
-    background: #FAF7F0;
-}
-
-/* ========== КНОПКИ ========== */
 .header-actions {
     display: flex;
     justify-content: space-between;
@@ -134,314 +58,107 @@ body {
     gap: 15px;
 }
 
+.admin-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: #6A2C45;
+    border-bottom: 2px solid #9D4469;
+    padding-bottom: 8px;
+}
+
 .btn-add {
     background: #9D4469;
     color: white;
-    padding: 12px 24px;
-    border-radius: 40px;
-    font-weight: 600;
-    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 8px;
     border: none;
-    transition: all 0.3s ease;
-    font-family: 'Lato', sans-serif;
-    font-size: 0.9rem;
-    box-shadow: 0 2px 5px rgba(157, 68, 105, 0.3);
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s;
 }
 
 .btn-add:hover {
     background: #6A2C45;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(106, 44, 69, 0.3);
+}
+
+.admin-card {
+    background: white;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    border: 1px solid #E8DFD0;
+    overflow: hidden;
+}
+
+.card-header {
+    background: #FAF7F0;
+    padding: 15px 20px;
+    font-weight: 600;
+    color: #6A2C45;
+    border-bottom: 1px solid #E8DFD0;
+    font-size: 1.1rem;
+}
+
+.card-body {
+    padding: 0;
+    overflow-x: auto;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.admin-table th {
+    background: #FAF7F0;
+    padding: 12px 15px;
+    text-align: left;
+    color: #6A2C45;
+    border-bottom: 2px solid #E8DFD0;
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
+.admin-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #E8DFD0;
+    color: #555;
+}
+
+.admin-table tr:hover {
+    background: #FAF7F0;
 }
 
 .btn-edit {
     background: #9D4469;
     color: white;
-    padding: 6px 14px;
-    border-radius: 30px;
+    padding: 5px 12px;
+    border-radius: 6px;
     text-decoration: none;
     font-size: 12px;
-    font-weight: 600;
-    transition: all 0.3s ease;
     display: inline-block;
-    border: none;
-    cursor: pointer;
-    margin-right: 8px;
+    margin-right: 5px;
+    transition: background 0.3s;
 }
 
 .btn-edit:hover {
     background: #6A2C45;
-    transform: translateY(-2px);
 }
 
 .btn-delete {
     background: #c62828;
     color: white;
-    padding: 6px 14px;
-    border-radius: 30px;
+    padding: 5px 12px;
+    border-radius: 6px;
     border: none;
     cursor: pointer;
     font-size: 12px;
-    font-weight: 600;
-    transition: all 0.3s ease;
+    transition: background 0.3s;
 }
 
 .btn-delete:hover {
     background: #8B1A1A;
-    transform: translateY(-2px);
 }
 
-/* ========== СТРАНИЦА РЕДАКТИРОВАНИЯ ========== */
-.edit-container {
-    max-width: 800px;
-    margin: 0 auto 40px;
-    background: #FFFFFF;
-    border-radius: 25px;
-    border: 1px solid #E8DFD0;
-    overflow: hidden;
-    box-shadow: 0 15px 35px rgba(106, 44, 69, 0.08);
-}
-
-.edit-header {
-    background: linear-gradient(135deg, #FAF7F0 0%, #FFFFFF 100%);
-    padding: 25px 30px;
-    border-bottom: 1px solid #E8DFD0;
-}
-
-.edit-header h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.8rem;
-    color: #6A2C45;
-    margin: 0;
-    letter-spacing: 1px;
-}
-
-.edit-form {
-    padding: 30px;
-}
-
-.form-row {
-    margin-bottom: 22px;
-}
-
-.form-row label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 600;
-    color: #6A2C45;
-    font-size: 0.9rem;
-    letter-spacing: 0.3px;
-}
-
-.form-row input,
-.form-row textarea,
-.form-row select {
-    width: 100%;
-    padding: 12px 16px;
-    border: 1px solid #E8DFD0;
-    border-radius: 12px;
-    font-family: 'Lato', sans-serif;
-    font-size: 0.95rem;
-    background: #FFFFFF;
-    transition: all 0.3s ease;
-}
-
-.form-row input:focus,
-.form-row textarea:focus,
-.form-row select:focus {
-    outline: none;
-    border-color: #9D4469;
-    box-shadow: 0 0 0 3px rgba(157, 68, 105, 0.1);
-}
-
-.form-row textarea {
-    resize: vertical;
-    min-height: 100px;
-}
-
-.form-actions {
-    margin-top: 35px;
-    padding-top: 25px;
-    border-top: 1px solid #E8DFD0;
-    display: flex;
-    gap: 15px;
-    justify-content: flex-end;
-}
-
-.btn-save {
-    background: #9D4469;
-    color: white;
-    padding: 12px 30px;
-    border-radius: 40px;
-    border: none;
-    cursor: pointer;
-    font-weight: 600;
-    font-size: 0.95rem;
-    transition: all 0.3s ease;
-    font-family: 'Lato', sans-serif;
-}
-
-.btn-save:hover {
-    background: #6A2C45;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(106, 44, 69, 0.3);
-}
-
-.btn-cancel {
-    background: #FFFFFF;
-    color: #6A2C45;
-    padding: 12px 30px;
-    border-radius: 40px;
-    text-decoration: none;
-    border: 1px solid #E8DFD0;
-    cursor: pointer;
-    font-weight: 600;
-    font-size: 0.95rem;
-    transition: all 0.3s ease;
-    text-align: center;
-}
-
-.btn-cancel:hover {
-    background: #FAF7F0;
-    border-color: #9D4469;
-}
-
-/* ========== МОДАЛЬНОЕ ОКНО ========== */
-.modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(106, 44, 69, 0.4);
-    backdrop-filter: blur(4px);
-    z-index: 1000;
-    justify-content: center;
-    align-items: center;
-}
-
-.modal-content {
-    background: #FFFFFF;
-    border-radius: 25px;
-    max-width: 550px;
-    width: 90%;
-    max-height: 85vh;
-    overflow-y: auto;
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
-    animation: fadeInUp 0.3s ease;
-}
-
-.modal-header {
-    background: linear-gradient(135deg, #FAF7F0 0%, #FFFFFF 100%);
-    border-bottom: 1px solid #E8DFD0;
-    padding: 20px 25px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.modal-header h3 {
-    margin: 0;
-    font-family: 'Playfair Display', serif;
-    color: #6A2C45;
-    font-size: 1.3rem;
-}
-
-.modal-close {
-    background: none;
-    border: none;
-    color: #6A2C45;
-    font-size: 28px;
-    cursor: pointer;
-    transition: color 0.3s;
-}
-
-.modal-close:hover {
-    color: #9D4469;
-}
-
-.modal-body {
-    padding: 25px;
-}
-
-.tabs {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 25px;
-    border-bottom: 1px solid #E8DFD0;
-}
-
-.tab-btn {
-    padding: 10px 25px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-weight: 600;
-    font-family: 'Lato', sans-serif;
-    transition: all 0.3s ease;
-    color: #999;
-    border-radius: 30px;
-}
-
-.tab-btn.active {
-    color: #9D4469;
-    background: #FAF7F0;
-}
-
-.form-group {
-    margin-bottom: 18px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 6px;
-    font-weight: 600;
-    color: #6A2C45;
-    font-size: 0.85rem;
-}
-
-.form-control {
-    width: 100%;
-    padding: 10px 14px;
-    border: 1px solid #E8DFD0;
-    border-radius: 10px;
-    font-family: 'Lato', sans-serif;
-    background-color: #FFFFFF;
-    transition: all 0.3s ease;
-}
-
-.form-control:focus {
-    outline: none;
-    border-color: #9D4469;
-    box-shadow: 0 0 0 3px rgba(157, 68, 105, 0.1);
-}
-
-textarea.form-control {
-    resize: vertical;
-    min-height: 80px;
-}
-
-.btn-submit {
-    background: #9D4469;
-    color: white;
-    padding: 12px;
-    border-radius: 40px;
-    border: none;
-    cursor: pointer;
-    font-weight: 600;
-    width: 100%;
-    transition: all 0.3s ease;
-    font-family: 'Lato', sans-serif;
-    margin-top: 10px;
-}
-
-.btn-submit:hover {
-    background: #6A2C45;
-    transform: translateY(-2px);
-}
-
-/* ========== ФУТЕР ========== */
 .admin-footer {
     text-align: center;
     padding: 30px;
@@ -451,23 +168,113 @@ textarea.form-control {
     font-size: 0.85rem;
 }
 
-/* ========== АНИМАЦИИ ========== */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
 }
 
-/* ========== АДАПТИВНОСТЬ ========== */
+.modal-content {
+    background: white;
+    border-radius: 15px;
+    max-width: 500px;
+    width: 90%;
+    max-height: 85vh;
+    overflow-y: auto;
+}
+
+.modal-header {
+    background: #FAF7F0;
+    padding: 15px 20px;
+    border-bottom: 1px solid #E8DFD0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h3 {
+    color: #6A2C45;
+    margin: 0;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #6A2C45;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #E8DFD0;
+}
+
+.tab-btn {
+    padding: 10px 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    color: #999;
+}
+
+.tab-btn.active {
+    color: #9D4469;
+    border-bottom: 2px solid #9D4469;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #6A2C45;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #E8DFD0;
+    border-radius: 8px;
+}
+
+.btn-submit {
+    background: #9D4469;
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    width: 100%;
+    transition: background 0.3s;
+}
+
+.btn-submit:hover {
+    background: #6A2C45;
+}
+
 @media (max-width: 768px) {
     .header-content {
         flex-direction: column;
-        gap: 15px;
+        gap: 10px;
         text-align: center;
     }
     
@@ -482,56 +289,39 @@ textarea.form-control {
     
     .admin-table th,
     .admin-table td {
-        padding: 10px;
+        padding: 8px 10px;
         font-size: 12px;
     }
-    
-    .edit-container {
-        margin: 0 15px 30px;
-    }
-    
-    .edit-form {
-        padding: 20px;
-    }
-    
-    .form-actions {
-        flex-direction: column;
-    }
-    
-    .btn-save, .btn-cancel {
-        text-align: center;
-    }
 }
-/* Стили для страницы редактирования */
+
 .edit-container {
     max-width: 800px;
-    margin: 0 auto 40px;
+    margin: 0 auto;
     background: #FFFFFF;
-    border-radius: 20px;
+    border-radius: 15px;
     border: 1px solid #E8DFD0;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(106, 44, 69, 0.08);
 }
 
 .edit-header {
-    background: linear-gradient(135deg, #FAF7F0 0%, #FFFFFF 100%);
-    padding: 25px 30px;
+    background: #FAF7F0;
+    padding: 20px 25px;
     border-bottom: 1px solid #E8DFD0;
 }
 
 .edit-header h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     color: #6A2C45;
     margin: 0;
 }
 
 .edit-form {
-    padding: 30px;
+    padding: 25px;
 }
 
 .form-row {
-    margin-bottom: 22px;
+    margin-bottom: 20px;
 }
 
 .form-row label {
@@ -539,20 +329,18 @@ textarea.form-control {
     margin-bottom: 8px;
     font-weight: 600;
     color: #6A2C45;
-    font-size: 0.9rem;
 }
 
 .form-row input,
 .form-row textarea,
 .form-row select {
     width: 100%;
-    padding: 12px 16px;
+    padding: 10px 12px;
     border: 1px solid #E8DFD0;
-    border-radius: 12px;
+    border-radius: 8px;
     font-family: 'Lato', sans-serif;
     font-size: 0.95rem;
     background: #FFFFFF;
-    transition: all 0.3s ease;
 }
 
 .form-row input:focus,
@@ -569,43 +357,37 @@ textarea.form-control {
 }
 
 .form-actions {
-    margin-top: 35px;
-    padding-top: 25px;
+    margin-top: 30px;
+    padding-top: 20px;
     border-top: 1px solid #E8DFD0;
     display: flex;
     gap: 15px;
-    justify-content: flex-end;
 }
 
 .btn-save {
     background: #9D4469;
     color: white;
-    padding: 12px 30px;
-    border-radius: 40px;
+    padding: 10px 25px;
+    border-radius: 8px;
     border: none;
     cursor: pointer;
     font-weight: 600;
-    font-size: 0.95rem;
-    transition: all 0.3s ease;
+    transition: background 0.3s;
 }
 
 .btn-save:hover {
     background: #6A2C45;
-    transform: translateY(-2px);
 }
 
 .btn-cancel {
     background: #FFFFFF;
     color: #6A2C45;
-    padding: 12px 30px;
-    border-radius: 40px;
+    padding: 10px 25px;
+    border-radius: 8px;
     text-decoration: none;
     border: 1px solid #E8DFD0;
-    cursor: pointer;
     font-weight: 600;
-    font-size: 0.95rem;
-    transition: all 0.3s ease;
-    text-align: center;
+    transition: all 0.3s;
 }
 
 .btn-cancel:hover {
@@ -613,82 +395,17 @@ textarea.form-control {
     border-color: #9D4469;
 }
 
-/* Стили для страницы добавления товара */
-.add-container {
-    max-width: 800px;
-    margin: 0 auto 40px;
-    background: #FFFFFF;
-    border-radius: 20px;
-    border: 1px solid #E8DFD0;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(106, 44, 69, 0.08);
-}
-
-.add-header {
-    background: linear-gradient(135deg, #FAF7F0 0%, #FFFFFF 100%);
-    padding: 25px 30px;
-    border-bottom: 1px solid #E8DFD0;
-}
-
-.add-header h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.8rem;
-    color: #6A2C45;
-    margin: 0;
-}
-
-.add-form {
-    padding: 30px;
-}
-
-.tabs {
-    display: flex;
-    gap: 15px;
-    margin-bottom: 30px;
-    border-bottom: 1px solid #E8DFD0;
-    padding-bottom: 10px;
-}
-
-.tab-btn {
-    padding: 10px 25px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-weight: 600;
-    font-family: 'Lato', sans-serif;
-    font-size: 1rem;
-    color: #999;
-    border-radius: 30px;
-    transition: all 0.3s ease;
-}
-
-.tab-btn.active {
-    color: #9D4469;
-    background: #FAF7F0;
-}
-
-.btn-submit {
-    background: #9D4469;
-    color: white;
-    padding: 12px 30px;
-    border-radius: 40px;
-    border: none;
-    cursor: pointer;
-    font-weight: 600;
-    font-size: 0.95rem;
-    transition: all 0.3s ease;
-    width: 100%;
-}
-
-.btn-submit:hover {
-    background: #6A2C45;
-    transform: translateY(-2px);
-}
-
 @media (max-width: 768px) {
-    .edit-form, .add-form { padding: 20px; }
-    .form-actions { flex-direction: column; }
-    .btn-save, .btn-cancel, .btn-submit { text-align: center; }
-    .tabs { flex-direction: column; gap: 10px; }
-    .tab-btn { text-align: center; }
+    .edit-form {
+        padding: 20px;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+    }
+    
+    .btn-save,
+    .btn-cancel {
+        text-align: center;
+    }
 }

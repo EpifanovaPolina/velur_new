@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/product.css">
+    <title>{{.Product.Name}} - Velur</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul class="but">
+                <li><a href="/">Каталог</a></li>
+                <li><a href="/about">О нас</a></li>
+                <li><a href="/#clothing">Одежда</a></li>
+                <li><a href="/#accessories">Аксессуары</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="product-details" class="Otstup">
+            <div class="product-image">
+                <img src="/{{.Product.ImageURL}}" alt="{{.Product.Name}}">
+            </div>
+
+            <div class="product-info">
+                <h1 class="product-name">{{.Product.Name}}</h1>
+                <div class="product-price">{{.Product.Price}} ₽</div>
+                <p class="product-description">{{.Product.Description}}</p>
+                
+                <div class="product-characteristics">
+                    <h3>Характеристики:</h3>
+                    <hr>
+                    <div class="characteristics-grid">
+                        <div class="char-item">
+                            <span class="char-label">Размер:</span>
+                            <span class="char-value">{{.Product.Size}}</span>
+                        </div>
+                        <div class="char-item">
+                            <span class="char-label">Цвет:</span>
+                            <span class="char-value">{{.Product.Color}}</span>
+                        </div>
+                        <div class="char-item">
+                            <span class="char-label">Материал:</span>
+                            <span class="char-value">{{.Product.Material}}</span>
+                        </div>
+                        <div class="char-item">
+                            <span class="char-label">Тип:</span>
+                            <span class="char-value">{{.Product.Type}}</span>
+                        </div>
+                        <div class="char-item">
+                            <span class="char-label">Сезон:</span>
+                            <span class="char-value">{{.Product.Season}}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ИСПРАВЛЕНА ссылка на заказ -->
+                <button class="buy-button" onclick="window.location.href='/order/{{ .Product.ID }}';">Купить</button>
+                <a href="/" class="back-link">← Вернуться в каталог</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>© 2025 Velur - Магазин женской одежды. Все права защищены.</p>
+    </footer>
+</body>
+</html>
